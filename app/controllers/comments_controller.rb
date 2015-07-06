@@ -14,6 +14,28 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @question = Question.find(params[:question_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:question_id])
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to question_path(@question)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:question_id])
+    @comment = Comment.find(params[:id])
+    @comment.destory
+    redirect_to question_path(@question)
+  end
+  
   private
     def comment_params
       params.require(:comment).permit(:name, :answer)
