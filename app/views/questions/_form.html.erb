@@ -1,9 +1,7 @@
 <% if current_user %>
   <div id="questions-form">
     <%=form_for @question do |f| %>
-    <%= f.label :Username %>
-    <%= f.text_field :name %>
-    <br>
+    <%= f.hidden_field :name, value: current_user.user_name%>
     <%= f.label :question %>
     <%= f.text_field :question %>
     <br>

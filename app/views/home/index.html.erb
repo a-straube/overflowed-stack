@@ -4,7 +4,10 @@
 <%= link_to 'Log Out', log_out_path %>
 
 <div id="user-info">
-  <%= @user %>
+  <% if @current_user %>
+    <%= @current_user.email %>
+    <%= @current_user.user_name %>
+  <% end %>
 </div>
 
 <%= link_to 'Questions', questions_path %>
