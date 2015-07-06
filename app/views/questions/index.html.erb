@@ -1,0 +1,8 @@
+<%= link_to 'Add a new question', new_question_path %>
+<div id="all-questions">
+  <h1>List of all questions!</h1>
+  <% @questions.each do |question| %>
+  <p><%= link_to question.question, question_path(question) %> - <%= question.name %></p>
+  <hr>
+  <% end %>
+</div>

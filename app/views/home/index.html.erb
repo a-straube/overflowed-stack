@@ -1,7 +1,10 @@
 <h1>Welcome to my Website</h1>
+<%= link_to 'Sign Up', new_user_path %>
 <%= link_to 'Log In', log_in_path %>
 <%= link_to 'Log Out', log_out_path %>
 
-<div id="container">
+<div id="user-info">
   <%= @user %>
 </div>
+
+<%= link_to 'Questions', questions_path %>
