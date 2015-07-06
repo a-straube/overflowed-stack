@@ -6,3 +6,10 @@
 <%= link_to "Delete question", question_path(@question),
                                 :data => {:confirm => "Are you sure you want to delete this question?",
                                           :method => "delete"} %>
+
+<h2>Comments</h2>
+<% @question.comments.each do |comment| %>
+  <%= comment.answer %> by <%= comment.name %>
+<% end %>
+
+<%= link_to "Add a comment", new_question_comment_path(@question) %>
