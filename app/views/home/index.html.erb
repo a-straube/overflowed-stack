@@ -1,13 +1,16 @@
-<h1>Welcome to my Website</h1>
-<%= link_to 'Sign Up', new_user_path %>
-<%= link_to 'Log In', log_in_path %>
-<%= link_to 'Log Out', log_out_path %>
-
+<h1>Welcome to Overflowed Stack</h1>
 <div id="user-info">
   <% if @current_user %>
-    <%= @current_user.email %>
-    <%= @current_user.user_name %>
+  <p>Log In Details:</p>
+  <p>Username: <%= @current_user.user_name %></p>
+  <p>User Email: <%= @current_user.email %></p>
+
   <% end %>
 </div>
-
-<%= link_to 'Questions', questions_path %>
+<div id="questionsbox">
+  <% if current_user %>
+  <p>You have successfully logged in! Go ahead and ask a question!</p>
+  <% else %>
+  <p>You need to login to get the most out of this site!</p>
+  <% end %>
+</div>

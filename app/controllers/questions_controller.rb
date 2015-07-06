@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    if params[:sort_by] == "language"
+      @questions = Question.all.sort_by{|object| [object.language.downcase]}
+    else
+      @questions = Question.all
+    end
   end
 
   def show

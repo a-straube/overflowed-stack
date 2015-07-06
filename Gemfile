@@ -8,7 +8,8 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
-gem 'pry'
+gem 'bootstrap-sass'
+gem 'sass-rails'
 
 group :development do
   gem 'byebug'

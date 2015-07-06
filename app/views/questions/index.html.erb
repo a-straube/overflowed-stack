@@ -1,10 +1,22 @@
-<%= link_to 'Add a new question', new_question_path %>
 <div id="all-questions">
   <h1>List of all questions!</h1>
   <% @questions.each do |question| %>
   <div class="question-block">
     <p><%= link_to question.question, question_path(question) %> - <%= question.name %></p>
+
+    <p>Language: <%= question.language %></p>
   </div>
   <hr>
   <% end %>
+</div>
+
+<div id="sortLang">
+  <h3>Sort</h3>
+  <p>You can also sort by the programming languge of the question.</p>
+  <%= link_to 'Sort by Language', questions_path(@questions, :sort_by => "language"), method: :get %>
+  <hr>
+</div>
+
+<div id="addQuestion">
+  <%= link_to 'Add a new question', new_question_path %>
 </div>
