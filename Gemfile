@@ -9,13 +9,13 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 gem 'bootstrap-sass'
-gem 'sass-rails'
 
 group :development do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
   gem 'quiet_assets'
+  gem 'letter_opener'
 end
 
 group :test, :development do
